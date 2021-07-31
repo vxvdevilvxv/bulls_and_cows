@@ -6,11 +6,11 @@ from engine import check_number, is_gameover, start_game
 
 attempt_count = 0
 
-user_number = input('Hello! It is a game "Bulls and cows". Input your number, please: ')
+user_number = input('Hello! It is a game "Bulls and cows". Input your number in format XXXX, please: ')
 
 while not is_gameover():
 
-    if check_number(user_number):
+    if check_number(user_number) and len(user_number) == 4:
         result = start_game(user_number)
         if result["bulls"] != 4:
             attempt_count += 1
