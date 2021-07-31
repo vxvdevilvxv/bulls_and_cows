@@ -26,8 +26,7 @@ _result = {"bulls": 0, "cows": 0}
 _hidden_number = str(randint(1000, 9999))
 
 def check_number(number):
-    temp_lst = [0 if number[i] in number[i+1:] else 1 for i in range(0, len(number)-1)]
-    return all(temp_lst)
+    return len(set([i for i in number])) == 4
 
 while not check_number(_hidden_number):
     _hidden_number = str(randint(1000, 9999))
